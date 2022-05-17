@@ -2,8 +2,8 @@
 
 ## Motivation
 As a webnovel and manga reader, when I finish the released chapters, I like to wait a few months to let new chapters
-accumulate. However, I always forget where I was after so long and end up rereading several chapters which is 
-incredibly frustrating. Therefore, I solved this issue with this project
+accumulate and then continue reading. However, I always forget where I was after so long and end up rereading several chapters which is 
+incredibly frustrating. To solve this issue, I completed this project.
 
 ## Description
 This is an automated tool that lets users determine whether the book on the active webpage has been read before by 
@@ -20,7 +20,7 @@ to update stored data when they want to. [^note]
 
 [^1]: Currently defined to be ctrl+s. It runs search_books.py.
 [^2]: Currently defined to be ctrl+u. It runs update.py.
-[^note]: Both hotkeys can be customized
+[^note]: Both hotkeys can be customized in Copy_URL.ahk.
 
 ## How to Install and Use
 1. Download AutoHotkey if not installed.
