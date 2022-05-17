@@ -17,6 +17,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; The hotkey ^s (ctrl+s) is defined to copy the URL of active tab  the clip_URL.txt file
 ;   and run search_books.py
+; Note: To customize the hotkey, replace ^s with desired key combination
+;       * Reference https://www.autohotkey.com/docs/Hotkeys.htm for special keys such as "ctrl" and "alt"
 
 ^s::
 FileDelete C:\Users\kevfi\PycharmProjects\web_mangas_novels\clip_URL.txt ; HERE
@@ -45,6 +47,8 @@ return
 
 ; The hotkey ^u (ctrl+u) is defined to copy the URL of the active tab to the clip_URL.txt file and
 ;   run update.py
+; Note: To customize this hotkey, replace ^u with desired key combination 
+;       * Reference https://www.autohotkey.com/docs/Hotkeys.htm for special keys such as "ctrl" and "alt"
 
 ^u::
 FileDelete C:\Users\kevfi\PycharmProjects\web_mangas_novels\clip_URL.txt ; HERE
