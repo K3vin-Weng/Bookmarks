@@ -8,8 +8,7 @@ lines_per_book = 5
 # punctuation marks
 punctuation = [" ", "!", "?", ".", ",", "'",'"', ":", ";", "-", "–", "(", ")", "[", "]", "{", "}", "$", "#", "%",
                "&", "<", ">", "=", "_", "*", "\n"]
-
-
+##################################################################################################################
 
 # next(file) skips to the first entry of the next book in provided file
 # requires: the cursor is at the beginning of the second entry/line of the previous book
