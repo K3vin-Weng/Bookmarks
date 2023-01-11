@@ -10,7 +10,7 @@ newlines = "\n" * 15
 title_q = "\nWhat is the title of the book?\n"
 manga_or_novel = "\nDid you just read a manga or a novel?\nPlease input M or N respectively.\n"
 chapter_q = "\nWhich chapter have you reached?\nType -1 if you have not read any chapter.\n"
-alt_version_q = "\nIs there a {} version?\nPlease input Y, NNS, or NS.\n"
+alt_version_q = "\nIs there a {} version?\nPlease input Y, U, or N.\n"
 alt_title_q = "\nAre the manga and novel title different?\nPlease input No or the {} title if different.\n"
 # alternative medium message
 alt_medium_yes = "Y"
@@ -51,11 +51,11 @@ if new_book:
 
         exist_novel = input(alt_version_q.format("novel"))
         # In case of error
-        exist_novel = check_cmd(COL_EXIST_NOVEL, [alt_medium_yes, alt_medium_unknown, alt_medium_none],
+        exist_novel = check_cmd(exist_novel, [alt_medium_yes, alt_medium_unknown, alt_medium_none],
                                 alt_version_q.format("novel"))
         book[COL_EXIST_NOVEL] = alt_medium_dict[exist_novel]
 
-        if ("Y" == exist_novel):
+        if "Y" == exist_novel:
             novel_title = input(alt_title_q.format("novel"))
             novel_chapter = input(chapter_q)
             
