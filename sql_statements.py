@@ -23,8 +23,8 @@ sql_initial_setup = """
 sql_insert_book = (
     "INSERT INTO web_book\r\n" 
     "VALUES ({BookID}, '{ExistManga}', '{ExistNovel}', "
-    "       '{MangaName}', {MangaChapter}, '{MangaChapterLink}', {MangaFinished}, {MangaRating}, "
-    "       '{NovelName}', {NovelChapter}, '{NovelChapterLink}', {NovelFinished}, {NovelRating}"
+    "       '{MangaRegEx}', '{MangaName}', {MangaChapter}, '{MangaChapterLink}', {MangaFinished}, {MangaRating}, "
+    "       '{NovelRegEx}', '{NovelName}', {NovelChapter}, '{NovelChapterLink}', {NovelFinished}, {NovelRating}"
     ")"
 )
 
@@ -43,7 +43,8 @@ sql_update_alt_title = (
 )
 
 sql_find_book = \
-    "SELECT * FROM web_book WHERE '{title}' REGEXP MangaRegEx OR '{title}' REGEXP NovelRegEx"
+    "SELECT * FROM web_book WHERE IF(ExistManga='Yes' , '{title}' REGEXP MangaRegEx, FALSE) OR " \
+    "IF(ExistNovel='Yes', '{title}' REGEXP NovelRegEx, False)"
 
 sql_num_of_books = \
     "SELECT COUNT(BookID)" \
