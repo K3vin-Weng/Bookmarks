@@ -16,7 +16,7 @@ new_book, book_details = get_book(connection, title)
 ## Display Information
 print(newlines)
 if new_book:
-    print(spaces + "There is NO RECORD of you having read this manga/novel")
+    print("There is NO RECORD of you having read this manga/novel")
 
 else:
     manga_link = book_details[COL_MANGA_CHAPTER_LINK]

@@ -40,7 +40,7 @@ if new_book:
     book_type = check_cmd(book_type, ["M", "N"], manga_or_novel)
     book_title = input(title_q)
     book_chapter = input(chapter_q)
-    book[COL_BOOK_ID] = number_of_books(connection)
+    book[COL_BOOK_ID] = number_of_books(connection) + 1
 
     if "M" == book_type:
         book[COL_EXIST_MANGA] = "Yes"
