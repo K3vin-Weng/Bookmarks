@@ -59,8 +59,8 @@ if new_book:
             novel_title = input(alt_title_q.format("novel"))
             novel_chapter = input(chapter_q)
             
-            book[COL_NOVEL_REGEX] = book_title if book_title == "No" else title_to_regex(novel_title)
-            book[COL_NOVEL_NAME] = novel_title
+            book[COL_NOVEL_REGEX] = book[COL_MANGA_REGEX] if novel_title == "No" else title_to_regex(book_title)
+            book[COL_NOVEL_NAME] = book[COL_MANGA_NAME] if novel_title == "No" else book_title
             book[COL_NOVEL_CHAPTER] = novel_chapter
 
     elif "N" == book_type:
@@ -79,8 +79,9 @@ if new_book:
         if ("Y" == exist_manga):
             manga_title = input(alt_title_q.format("manga"))
             manga_chapter = input(chapter_q)
-            book[COL_MANGA_REGEX] = book_title if book_title == "No" else title_to_regex(manga_title)
-            book[COL_MANGA_NAME] = manga_title
+
+            book[COL_MANGA_REGEX] = book[COL_NOVEL_REGEX] if manga_title == "No" else title_to_regex(book_title)
+            book[COL_MANGA_NAME] = book[COL_NOVEL_NAME] if manga_title == "No" else book_title
             book[COL_MANGA_CHAPTER] = manga_chapter
 
     add_book(connection, book)
@@ -100,9 +101,10 @@ else:
     if "M" == book_type:
         if book[COL_EXIST_MANGA] != alt_medium_dict[alt_medium_yes]:
             book[COL_EXIST_MANGA] = alt_medium_dict[alt_medium_yes]
-            manga_title = input(alt_title_q.format("manga"))
-            book[COL_MANGA_REGEX] = title_to_regex(manga_title)
-            book[COL_MANGA_NAME] = manga_title
+            novel_title = input(alt_title_q.format("novel"))
+            if "No" == novel_title:
+                book[COL_NOVEL_REGEX] = title_to_regex(novel_title)
+                book[COL_NOVEL_NAME] = novel_title
 
         book[COL_MANGA_CHAPTER] = book_chapter
         book[COL_MANGA_CHAPTER_LINK] = book_url
@@ -110,9 +112,10 @@ else:
     elif "N" == book_type:
         if book[COL_EXIST_NOVEL] != alt_medium_yes:
             book[COL_EXIST_NOVEL] = alt_medium_yes
-            novel_title = input(alt_title_q.format("novel"))
-            book[COL_NOVEL_REGEX] = title_to_regex(novel_title)
-            book[COL_NOVEL_NAME] = novel_title
+            manga_title = input(alt_title_q.format("manga"))
+            if "No" == manga_title:
+                book[COL_MANGA_REGEX] = title_to_regex(manga_title)
+                book[COL_MANGA_NAME] = manga_title
 
         book[COL_NOVEL_CHAPTER] = book_chapter
         book[COL_NOVEL_CHAPTER_LINK] = book_url
