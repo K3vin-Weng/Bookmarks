@@ -22,9 +22,3 @@ to update stored data when they want to. [^note]
 [^2]: Currently defined to be ctrl+u. It runs update.py.
 [^note]: Both hotkeys can be customized in Copy_URL.ahk.
 
-## How to Install and Use
-1. Download AutoHotkey if not installed.
-2. Download Python if not installed.
-3. Download the files in this repository in a single folder. Note that the Python libraries needed are urrlib.request, beautifulsoup4, re and webbrowser.
-4. Start using by double clicking on the Copy_URL.ahk file. You can now press the two hotkeys whenever you want while browsing through online books.
-
